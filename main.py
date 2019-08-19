@@ -8,7 +8,6 @@ def main():
 	get_lyrics(url)
 	
 
-# Function to get song url from user
 def get_song_url():
 	artist = input('Enter artist name: ')
 	song = input('Enter song name: ')
@@ -33,7 +32,6 @@ def get_song_url():
 
 	return url
 
-# Funtion that scrapes lyrics from url
 def get_lyrics(u):
 	source = requests.get(u).text
 	soup = BeautifulSoup(source, 'lxml')
@@ -53,7 +51,7 @@ def get_lyrics(u):
 	clear_console()
 	main()
 
-# Function to clear console
+
 def clear_console():
 	os.system('cls' if os.name=='nt' else 'clear')
 
