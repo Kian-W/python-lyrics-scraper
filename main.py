@@ -34,8 +34,8 @@ def get_song_url():
 
 	return url
 
-def get_lyrics(u):
-	source = requests.get(u).text
+def get_lyrics(url):
+	source = requests.get(url).text
 	soup = BeautifulSoup(source, 'lxml')
 
 	try:
