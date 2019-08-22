@@ -11,11 +11,11 @@ def main():
 	
 
 def get_song_url():
-	artist = input('Enter artist name: ')
-	song = input('Enter song name: ')
+	provided_artist = input('Enter artist name: ')
+	provided_song = input('Enter song name: ')
 
-	list_artist = artist.split()
-	list_song = song.split()
+	list_artist = provided_artist.split()
+	list_song = provided_song.split()
 
 	# Add dashes to the end of each word
 	for i in range(len(list_artist)):
