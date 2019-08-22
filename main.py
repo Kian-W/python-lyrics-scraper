@@ -17,12 +17,8 @@ def get_song_url():
 	list_artist = provided_artist.split()
 	list_song = provided_song.split()
 
-	# Add dashes to the end of each word
-	for i in range(len(list_artist)):
-		list_artist[i] += '-'
-
-	for i in range(len(list_song)):
-		list_song[i] += '-'
+	list_artist = convert_user_param_to_genius_url_param(list_artist)
+	list_song = convert_user_param_to_genius_url_param(list_song)
 
 
 	# Convert list back to string
@@ -52,6 +48,15 @@ def get_lyrics(url):
 	input('Press any key to continue')
 	clear_console()
 	main()
+
+
+def convert_user_param_to_genius_url_param(list_to_convert):
+	for i in range(len(list_to_convert)):
+		list_to_convert[i] += '-'
+
+	return list_to_convert
+
+
 
 
 def clear_console():
