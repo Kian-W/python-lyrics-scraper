@@ -14,16 +14,9 @@ def get_song_url():
 	provided_artist = input('Enter artist name: ')
 	provided_song = input('Enter song name: ')
 
-	list_artist = provided_artist.split()
-	list_song = provided_song.split()
-
-	list_artist = convert_user_param_to_genius_url_param(list_artist)
-	list_song = convert_user_param_to_genius_url_param(list_song)
-
-
 	# Convert list back to string
-	artist = ''.join(list_artist)
-	song = ''.join(list_song)
+	artist = convert_user_param_to_genius_url_param(provided_artist)
+	song = convert_user_param_to_genius_url_param(provided_song)
 
 	# Create final url
 	url = 'https://genius.com/' + artist + song + 'lyrics'
@@ -50,11 +43,15 @@ def get_lyrics(url):
 	main()
 
 
-def convert_user_param_to_genius_url_param(list_to_convert):
-	for i in range(len(list_to_convert)):
-		list_to_convert[i] += '-'
+def convert_user_param_to_genius_url_param(user_param):
+	user_param_list = user_param.split()
 
-	return list_to_convert
+	for i in range(len(user_param_list)):
+		user_param_list[i] += '-'
+
+	genius_url_param = ''.join(user_param_list)
+
+	return genius_url_param
 
 
 
