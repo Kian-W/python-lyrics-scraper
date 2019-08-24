@@ -14,7 +14,6 @@ def get_song_url():
 	provided_artist = input('Enter artist name: ')
 	provided_song = input('Enter song name: ')
 
-	# Convert list back to string
 	artist = convert_user_param_to_genius_url_param(provided_artist)
 	song = convert_user_param_to_genius_url_param(provided_song)
 
