@@ -24,8 +24,12 @@ def get_song_url():
 	return url
 
 def get_lyrics(url):
+	print('Gathering lyrics...')
+
 	source = requests.get(url).text
 	soup = BeautifulSoup(source, 'lxml')
+
+	clear_console()
 
 	try:
 		lyrics = soup.find('div', {'class' : 'lyrics'}).text
