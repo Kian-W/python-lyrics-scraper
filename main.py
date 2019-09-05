@@ -3,6 +3,8 @@
 from bs4 import BeautifulSoup
 import requests
 import os
+import pyperclip
+
 
 def main():
 	url = get_song_url()
@@ -40,6 +42,12 @@ def get_lyrics(url):
 
 
 	print(lyrics)
+
+	user_copy_lyrics_choice = input('Copy lyrics to clipboard? [Y/N]')
+	if user_copy_lyrics_choice.upper() == 'Y':
+		pyperclip.copy(lyrics)
+	else:
+		pass
 
 	input('Press any key to continue')
 	clear_console()
