@@ -57,8 +57,6 @@ def convert_user_param_to_genius_url_param(user_param):
 	return genius_url_param
 
 
-
-
 def clear_console():
 	os.system('cls' if os.name=='nt' else 'clear')
 
